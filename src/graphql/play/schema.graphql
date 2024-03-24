@@ -1,0 +1,32 @@
+type Query {
+    PlayQuery (Play_Number: Int, Possession: String, Yard: Int, Hash: String, Down: Int, Distance: Int, Quarter: Int, O_Formation: String, Play_Type: String, Play_Type_Dir: String, Coverage: String, Pressure_Left: Boolean, Pressure_Middle: Boolean, Pressure_Right: Boolean, Ball_Carrier: Int, Event: String) : [Play] 
+}
+
+
+type Play {
+    ID: String
+    Play_Number: Int @deprecated(reason: "oldField is deprecated. Use newField instead.")
+    Drive: Int
+    Possession: String
+    Yard: Int
+    Hash: String
+    Down: Int
+    Distance: Int
+    Quarter: Int
+    Motion: String
+    D_Formation: String
+    O_Formation: [Formation]
+    Formation_Strength: String
+    Home_Score: Int
+    Away_Score: Int
+    Play_Type: String
+    Play_Type_Dir: String
+    Coverage: String
+    Pressure_Left: Boolean
+    Pressure_Middle: Boolean
+    Pressure_Right: Boolean
+    Ball_Carrier: Int
+    Event: String,
+    Result: Int
+}
+

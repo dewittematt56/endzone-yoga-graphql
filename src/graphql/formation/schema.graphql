@@ -1,0 +1,12 @@
+type Query {
+    FormationQuery (Formation: String, Wide_Receivers: Int, Tight_Ends: Int, Running_Backs: Int, Team_Code: String) : [Formation] 
+}
+
+type Formation {
+    ID: Int
+    Formation: String
+    Running_Backs: Int
+    Wide_Receivers: Int
+    Tight_Ends: Int
+    Team_Code: String
+}
