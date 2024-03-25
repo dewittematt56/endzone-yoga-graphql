@@ -1,6 +1,7 @@
 import { GraphQLResolveInfo } from "graphql";
 import graphqlFields from "graphql-fields"
 import { executeStandardQuery } from "../../utils/database/queryUtils";
+import { GraphQLError } from 'graphql'
 
 export default {
   Query: {

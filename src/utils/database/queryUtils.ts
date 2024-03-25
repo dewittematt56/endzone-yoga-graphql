@@ -1,4 +1,5 @@
 import dbPool from './connectionUtils'
+import { GraphQLError } from 'graphql'
 
 /**
  * Execute a Normal Select Query on the database by acquiring a Connection from the pool  
@@ -22,11 +23,11 @@ export async function executeStandardQuery(requestedColumns: String[], table: st
             return queryResults.rows
         }, (error) => {
             console.error(error)
-            return []
+            return new GraphQLError("Unable to Execute Query")
         })
     } catch(exception){
         console.log(exception)
-        return []
+        return new GraphQLError("Something Unexpected has occured")
     } finally {
         connection.release();
     }

@@ -3,20 +3,18 @@ import { createYoga } from 'graphql-yoga'
 import schema from './graphql/loader' 
 import { useResponseCache } from '@envelop/response-cache'
 
-
 const app = express()
 
 const yoga = createYoga({ 
   schema: schema,  
   plugins: [
       useResponseCache({
-        // global cache
         session: () => null,
+        ttl: 3600000 // Time To Live for Cache -- 1 hour
       })
   ]
 })
  
-// Bind GraphQL Yoga to the graphql endpoint to avoid rendering the playground on any path
 app.use(yoga.graphqlEndpoint, yoga)
  
 app.listen(4000, () => {

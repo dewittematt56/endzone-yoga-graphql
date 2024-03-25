@@ -19,6 +19,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.1",
     "graphql": "^16.8.1",
+    "graphql-constraint-directive": "^5.4.2",
     "graphql-fields": "^2.0.3",
     "graphql-tools": "^9.0.1",
     "graphql-yoga": "^5.2.0",
