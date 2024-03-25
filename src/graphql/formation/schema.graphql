@@ -3,7 +3,7 @@ type Query {
 }
 
 type Formation {
-    ID: Int
+    ID: ID
     Formation: String
     Running_Backs: Int
     Wide_Receivers: Int

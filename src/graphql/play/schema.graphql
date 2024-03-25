@@ -4,7 +4,7 @@ type Query {
 
 
 type Play {
-    ID: String
+    ID: ID
     Play_Number: Int @deprecated(reason: "oldField is deprecated. Use newField instead.")
     Drive: Int
     Possession: String
